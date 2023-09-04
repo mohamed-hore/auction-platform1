@@ -1,0 +1,37 @@
+﻿@using MazadMarket.Resourses
+@{
+    ViewBag.Title = @Html.Raw(layout.contactus);
+}
+
+<br /><br /><br /><br /><br /><br />
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    @Html.Raw(layout.contactL1)<br />
+    @Html.Raw(layout.contactL2)<br />
+    @Html.Raw(layout.contactL3)
+</address>
+
+<address>
+    <strong>@Html.Raw(layout.support):</strong>   <a href="mailto:Support@example.com">@Html.Raw(layout.supportMail)</a><br />
+    <strong>@Html.Raw(layout.marketing):</strong> <a href="mailto:Marketing@example.com">@Html.Raw(layout.marketingMail)</a>
+</address>
+
+
+
+
+<script src="~/js/jquery.min.js"></script>
+<script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+<script src="~/signalR/hubs" type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#contact').addClass('active');
+
+    })
+</script>

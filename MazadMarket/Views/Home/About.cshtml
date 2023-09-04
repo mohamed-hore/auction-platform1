@@ -1,0 +1,82 @@
+﻿@using MazadMarket.Resourses
+@{
+    ViewBag.Title = @Html.Raw(layout.aboutus);
+}
+<section id="secondary-banner" class="dynamic-image-3">
+    <!--for other images just change the class name of this section block like, class="dynamic-image-2" and add css for the changed class-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                <h2>@Html.Raw(layout.aboutus)</h2>
+                <h4>@Html.Raw(layout.aboutUsDescription)</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+               
+            </div>
+        </div>
+    </div>
+</section>
+<!--secondary-banner ends-->
+<div class="message-shadow"></div>
+<div class="clearfix"></div>
+<section class="content">
+    <div class="container">
+        <div class="inner-page about-us row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padding-left-none padding-bottom-40 xs-padding-left-none xs-padding-right-none">
+                <h3 class="margin-bottom-25">@Html.Raw(layout.mission)</h3>
+                <p>
+                   @Html.Raw(layout.missionP1)
+                </p>
+                <p>
+                    <img class="alignleft margin-top-10 margin-bottom-20 margin-right-25 margin-left-none" src="images/img-display.jpg" alt="automotive"> @Html.Raw(layout.missionP2)
+                </p>
+                <p>
+                    @Html.Raw(layout.missionP3)
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 padding-right-none padding-bottom-40 xs-padding-left-none xs-padding-right-none">
+                <div class="right-container">
+                    <h3 class="margin-bottom-25">@Html.Raw(layout.special)</h3>
+                    <div class="progressbar">
+                        <div class="bs-example">
+                            <div class="progress margin-bottom-15">
+                                <div class="progress-bar progress-bar-danger" data-width="100">@Html.Raw(layout.cars)</div>
+                            </div>
+                            <div class="progress margin-bottom-15">
+                                <div class="progress-bar progress-bar-danger" data-width="90">@Html.Raw(layout.electrioics)</div>
+                            </div>
+                            <div class="progress margin-bottom-15">
+                                <div class="progress-bar progress-bar-danger" data-width="100">@Html.Raw(layout.mobile)</div>
+                            </div>
+                            <div class="progress margin-bottom-15">
+                                <div class="progress-bar progress-bar-danger" data-width="95">@Html.Raw(layout.buildings)</div>
+                            </div>
+                            <div class="progress margin-bottom-15">
+                                <div class="progress-bar progress-bar-danger" data-width="100">@Html.Raw(layout.books)</div>
+                            </div>
+                            <div class="progress margin-bottom-15">
+                                <div class="progress-bar progress-bar-danger" data-width="95">@Html.Raw(layout.clothes)</div>
+                            </div>
+                            <div class="progress margin-bottom-15">
+                                <div class="progress-bar progress-bar-danger" data-width="100">@Html.Raw(layout.Homes)</div>
+                            </div>
+                            <div class="progress margin-bottom-15">
+                                <div class="progress-bar progress-bar-danger" data-width="90">@Html.Raw(layout.usedItems)</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--container ends-->
+</section>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#about').addClass('active');
+
+    })
+</script>

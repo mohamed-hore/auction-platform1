@@ -1,0 +1,123 @@
+﻿@model MazadMarket.ViewModel.HomePageViewModel
+@using MazadMarket.Resourses
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Partial("_slider")
+
+
+<section class="content">
+    <div class="container">
+        <div class="clearfix">
+            <div class="row margin-top-10">
+                <div class="project_wrapper clearfix">
+                    <div class="analytics-header">
+                        <h4> @Html.Raw(layout.lastAddedProduct) </h4>
+                    </div>
+                    <div class="related_post margin-top-10 clearfix">
+                        @foreach (var item in Model.lastAddedProduct)
+                        {
+
+
+
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 scroll_effect fadeInLeft" data-wow-delay=".2s">
+                                <div class="car-block margin-bottom-10">
+                                    <a href="Products/categoryProductDetails/@item.Id">
+                                        <div class="img-flex"><span class="align-center"><i class="fa fa-3x fa-pencil-square-o"></i></span> <img src="~/ProductImage/@item.Picture" alt="" class="img-responsive" style="height:150px; width:100%;  object-fit: cover;"> </div>
+                                        <div class="car-block-bottom">
+                                            <h2>@item.productName </h2>
+                                            <h4>@item.Price</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hidden">
+    <div class="container">
+        <div class="clearfix">
+            <div class="row margin-top-10">
+                <div class="project_wrapper clearfix">
+                    <div class="analytics-header ">
+                        <h4> @Html.Raw(layout.lastOfOurProduct) </h4>
+                    </div>
+                    <div class="related_post margin-top-10 clearfix">
+                        @foreach (var item in Model.lastOfOurProduct)
+                        {
+
+
+
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 scroll_effect fadeInLeft" data-wow-delay=".2s">
+                                <div class="car-block margin-bottom-10">
+                                    <a href="Products/categoryProductDetails/@item.Id">
+                                        <div class="img-flex"><span class="align-center"><i class="fa fa-3x fa-pencil-square-o"></i></span> <img src="~/ProductImage/@item.Picture" alt="" class="img-responsive" style="height:150px; width:100%;  object-fit: cover;"> </div>
+                                        <div class="car-block-bottom">
+                                            <h2>@item.productName </h2>
+                                            <h4>@item.Price</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="content">
+    <div class="container">
+        <div class="clearfix">
+            <div class="row margin-top-10">
+                <div class="project_wrapper clearfix">
+                    <div class="analytics-header ">
+                        <h4> @Html.Raw(layout.lastSoldProduct) </h4>
+                    </div>
+                    <div class="related_post margin-top-10 clearfix">
+                        @foreach (var item in Model.lastSoldProduct)
+                        {
+
+
+
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 scroll_effect fadeInLeft" data-wow-delay=".2s">
+                                <div class="car-block margin-bottom-10">
+                                    <a href="Products/categoryProductDetails/@item.Id">
+                                        <div class="img-flex"><span class="align-center"><i class="fa fa-3x fa-pencil-square-o"></i></span> <img src="~/ProductImage/@item.Picture" alt="" class="img-responsive" style="height:150px; width:100%;  object-fit: cover;"> </div>
+                                        <div class="car-block-bottom">
+                                            <h2>@item.productName </h2>
+                                            <h4>@item.Price</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#home').addClass('active');
+
+    })
+</script>

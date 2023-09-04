@@ -1,0 +1,127 @@
+﻿@model MazadMarket.Models.Products
+@using MazadMarket.Resourses
+@{
+    ViewBag.Title = @Html.Raw(layout.delete);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="secondary-banner" class="dynamic-image-13">
+    <!--for other images just change the class name of this section block like, class="dynamic-image-2" and add css for the changed class-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                <h2>@Html.Raw(layout.products)</h2>
+                <h4>@Html.Raw(layout.productDescription)</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 ">
+               
+            </div>
+        </div>
+    </div>
+</section>
+<h2>@Html.Raw(layout.delete)</h2>
+
+<h3>@Html.Raw(layout.deleteMessage)</h3>
+<div>
+    <h4>@Html.Raw(layout.products)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductsType.typeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductsType.typeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.minRaise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.minRaise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateOfAdd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateOfAdd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateOfAuctionStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateOfAuctionStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateOfAuctionEnd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateOfAuctionEnd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.approved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.approved)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sold)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="@Html.Raw(layout.delete)" class="btn btn-default" /> |
+            @Html.ActionLink(layout.backToList, "Index")
+        </div>
+    }
+</div>

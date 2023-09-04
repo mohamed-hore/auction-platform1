@@ -1,0 +1,89 @@
+﻿@model IEnumerable<MazadMarket.Models.Products>
+@using MazadMarket.Resourses
+@{
+    ViewBag.Title = @Html.Raw(layout.approve);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="secondary-banner" class="dynamic-image-13">
+    <!--for other images just change the class name of this section block like, class="dynamic-image-2" and add css for the changed class-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                <h2>@Html.Raw(layout.approve)</h2>
+                <h4>@Html.Raw(layout.productDescription)</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 ">
+               
+            </div>
+        </div>
+    </div>
+</section>
+<h2>@Html.Raw(layout.approve)</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductsType.typeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userId)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.minRaise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateOfAdd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateOfAuctionStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateOfAuctionEnd)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductsType.typeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.minRaise)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateOfAdd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateOfAuctionStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateOfAuctionEnd)
+            </td>
+            <td>
+                @Html.ActionLink(layout.approve, "EditAprove", new { id = item.Id, Aprove = true })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,35 @@
+﻿@model MazadMarket.Models.ProductsType
+@using MazadMarket.Resourses
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br /><br />
+  <h2>@Html.Raw(layout.details)</h2>
+
+<div>
+    <h4>@Html.Raw(layout.typeName)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.typeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.typeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture)
+        </dt>
+
+        <dd>
+            <img src="~/ProductTypeImage/@Html.DisplayFor(model => model.Picture)" style="width:100px; height:100px;" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(layout.details, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(layout.details, "Index")
+</p>

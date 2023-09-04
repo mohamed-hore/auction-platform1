@@ -1,0 +1,357 @@
+﻿@model MazadMarket.Models.Products
+@using MazadMarket.Resourses
+@{
+    ViewBag.Title = "categoryProductDetailsAuto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section id="secondary-banner" class="dynamic-image-13">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                <h2>@Html.Raw(layout.products)</h2>
+                <h4>@Html.Raw(layout.productDescription)</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 ">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="section1">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form asp-controller="Product" asp-action="categoryProductDetailsAuto" method="post">
+
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        <h4>@Html.Raw(layout.productAuction)</h4> Auto
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                        @if (!Model.sold)
+                        {
+
+                            <div class="form-group">
+                                <div class="col-md-2"> @Html.Raw(layout.limitPrice)</div>
+                                <div class="col-md-4">
+
+                                    <input type="number" id="field1" onkeyup="checkFields()" name="limitPrice" style="width:100%;" />
+                                </div>
+                            </div>
+                        }
+
+                        @if (!Model.sold)
+                        {
+                            <div class="form-group">
+                                <div class="col-md-2"> @Html.Raw(layout.valueUP)</div>
+                                <div class="col-md-4">
+
+                                    <input type="number" id="field2" name="valueUP" onkeyup="checkFields()"  />
+                                </div>
+                            </div>
+                        }
+                        @if (!Model.sold)
+                        {
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="hidden" value="@Html.DisplayFor(model => model.Id)" name="productId" />
+
+
+                                    <input type="submit" name="sold" value="Auto Raise" class="btn btn-success" style="margin-bottom : 5px" id="submitButton" disabled />
+
+
+                                    <style>
+                                        /* زر غير فعّال */
+                                        input[type="submit"][disabled] {
+                                            background-color: silver; /* اللون الفضي للزر غير الفعّال */
+                                        }
+                                    </style>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+
+
+                </form>
+               
+            </div>
+            <div class="col-md-6">
+                <hr />
+
+                <img src="~/images/gavel_pound_PA_300_wht.gif" class="jojo" />
+
+
+                <div class="row jumbotron">
+                    <b> @ViewBag.MaxPrice </b>
+                    <img src="~/images/mohamed.png" class="abascx " />
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<p>  you must jhdjasdhajsd from here  <br> <br>@Html.ActionLink(" Pay ", "Form", new { id = Model.Id }, new { @class = "btn btn-success", style = " margin-bottom: 5px" })
+ </p>
+
+<style>
+    .abascx {
+        width: 300px;
+        height: 300px;
+        float: right;
+        margin-right: -50px;
+        margin-top: -50px;
+    }
+
+
+    .jojo {
+        width: 200px;
+        height: 100px;
+        margin-top: -50px;
+        transform: rotateX(3deg) rotateY(-50deg);
+        border-radius: 10px;
+    }
+</style>
+
+
+
+
+
+
+
+<br />
+
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <h2>@Html.Raw(layout.categoryProductDetails)</h2>
+
+            <div>
+                <h4>@Html.Raw(layout.products)</h4>
+                <hr />
+                <div class="col-md-6">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ProductsType.typeName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ProductsType.typeName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.productName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.productName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.userId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.userId)
+                        </dd>
+
+
+
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fullName)
+                        </dt>
+
+
+
+                        <dd>
+                            @Html.DisplayFor(model => model.fullName)
+                        </dd>
+
+
+
+
+                        <dt>
+
+                            @Html.DisplayNameFor(model => model.bankAccountNumber)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.bankAccountNumber)
+                        </dd>
+
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Price)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.minRaise)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.minRaise)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.dateOfAdd)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.dateOfAdd)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.dateOfAuctionStart)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.dateOfAuctionStart)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.dateOfAuctionEnd)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.dateOfAuctionEnd)
+                        </dd>
+
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.sold)
+                        </dt>
+
+                        <dd>
+                            @if (Model.sold)
+                            {
+                                <img src="~/images/sold.jpg" style="width:100px; height:100px;" />
+
+
+                            }
+                            else
+                            {
+                                <img src="~/images/ava.jpg" style="width:100px; height:100px;" />
+                            }
+
+
+
+                        </dd>
+
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Picture)
+                        </dt>
+
+                        <dd>
+                            <img src="~/ProductImage/@Model.Picture" style="width:300px; height:300px;" />
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <h2>@Html.Raw(layout.raiseList)</h2>
+
+
+        <table class="table table-bordered table-hover">
+            <tr>
+
+                <th>
+                    @Html.Raw(layout.userName)
+                </th>
+                <th>
+                    @Html.Raw(layout.raiseAmount)
+                </th>
+                <th>
+                    @Html.Raw(layout.dateOfRaise)
+                </th>
+                <th>
+                    @Html.Raw(layout.remarks)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model.ProductsAuction)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.userId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.riseAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dateOfRise)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Remarks)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#product').addClass('active');
+
+        })
+</script>ss
+
+<script>
+function checkFields() {
+  var field1 = document.getElementById("field1").value;
+  var field2 = document.getElementById("field2").value;
+  var submitButton = document.getElementById("submitButton");
+
+  if (field1 !== "" && field2 !== "") {
+    submitButton.disabled = false;  // تمكين زر الإرسال
+  } else {
+    submitButton.disabled = true;   // تعطيل زر الإرسال
+  }
+}
+</script>

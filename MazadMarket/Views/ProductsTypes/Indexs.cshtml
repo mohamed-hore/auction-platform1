@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MazadMarket.Models.ProductsType>
+@using MazadMarket.Resourses
+@{
+    ViewBag.Title = "Indexs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="secondary-banner" class="dynamic-image-13">
+    <!--for other images just change the class name of this section block like, class="dynamic-image-2" and add css for the changed class-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                
+                <h4>@Html.Raw(layout.productDetailsDescription)</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 ">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<br /><br />
+<section class="car-block-wrap padding-bottom-40">
+    <div class="container">
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 margin-bottom-none">
+                    <div class="flip margin-bottom-30">
+                        <div class="card">
+                            <div class="face front"><img class="img-responsive" style="width: 100%; height: 200px !important;" src="~/ProductTypeImage/@item.Picture" alt=""></div>
+                            <div class="face back">
+                                <div class='hover_title'>@item.typeName</div>
+                                <a href="~/Products/categoryProduct/@item.Id"><i class="fa fa-link button_icon"></i></a> <a href="~/ProductTypeImage/@item.Picture" class="fancybox"><i class="fa fa-arrows-alt button_icon"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4><a href="~/Products/categoryProduct/@item.Id">@item.typeName</a></h4>
+                </div>
+
+            }
+
+
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#product').addClass('active');
+
+    })
+</script>

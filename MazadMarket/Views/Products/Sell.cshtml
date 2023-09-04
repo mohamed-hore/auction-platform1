@@ -1,0 +1,157 @@
+﻿@model MazadMarket.Models.Products
+@using MazadMarket.Resourses
+@{
+    ViewBag.Title = @Html.Raw(layout.sell);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="secondary-banner" class="dynamic-image-13">
+    <!--for other images just change the class name of this section block like, class="dynamic-image-2" and add css for the changed class-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                <h2>@Html.Raw(layout.sell)</h2>
+                
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 ">
+              
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>@Html.Raw(layout.sell)</h2>
+
+
+
+                <div class="form-horizontal">
+                    <h4>@Html.Raw(layout.products)</h4>
+                    <hr />
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Id)
+                    if (!Model.sold)
+                        {
+                        
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="@Html.Raw(layout.sell)" class="btn btn-default" />
+                                </div>
+                            </div>
+                        }
+                      
+                    }
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ProductsType.typeName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ProductsType.typeName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.productName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.productName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Picture)
+                        </dt>
+
+                        <dd>
+                            <img src="~/ProductImage/@Html.DisplayFor(model => model.Picture)" style="width:100px; height:100px;" />
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Price)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.minRaise)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.minRaise)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.dateOfAdd)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.dateOfAdd)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.dateOfAuctionStart)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.dateOfAuctionStart)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.dateOfAuctionEnd)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.dateOfAuctionEnd)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.approved)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.approved)
+                        </dd>
+
+
+
+                    </dl>
+
+                    <div>
+                        @Html.ActionLink( layout.backToList , "Index")
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <br /><br /><br /><br /><br /><br />
+                @if (Model.sold)
+                {
+                    <img src="~/images/sold.jpg" style="width:100%; height:100%;" />
+                    
+                }
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</section>

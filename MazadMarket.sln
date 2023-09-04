@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazadMarket", "MazadMarket\MazadMarket.csproj", "{1834A7F8-25A5-4054-88D0-406AAD3F656F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1834A7F8-25A5-4054-88D0-406AAD3F656F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1834A7F8-25A5-4054-88D0-406AAD3F656F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1834A7F8-25A5-4054-88D0-406AAD3F656F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1834A7F8-25A5-4054-88D0-406AAD3F656F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {491F70F6-5CE0-4A2D-9CE8-B7F234DD9474}
+	EndGlobalSection
+EndGlobal

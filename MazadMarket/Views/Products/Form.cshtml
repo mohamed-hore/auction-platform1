@@ -1,0 +1,138 @@
+﻿@model MazadMarket.Models.paymentConfirmation
+@using MazadMarket.Resourses
+
+
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section id="secondary-banner" class="dynamic-image-13">
+    <!--for other images just change the class name of this section block like, class="dynamic-image-2" and add css for the changed class-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                <h2>@Html.Raw(layout.products)</h2>
+                <h4>@Html.Raw(layout.productDescription)</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 ">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<h3>
+    <p> In order to be able to bid on this product,</p>
+    <p> you must pay a deposit which is 3% of the product price </p>
+    <p> to you through our payment method </p>
+</h3>
+<br>
+
+<div>
+    @{if (ViewBag.Result != null)
+
+        {
+            <h3 style="color: green;">@ViewBag.Result</h3>
+
+        }
+
+
+
+    }
+
+
+</div>
+
+
+
+
+<form asp-controller="Product" asp-action="form" method="post">
+
+
+
+
+    <div class="form-group">
+        <div class="col-md-0">
+            @Html.LabelFor(model => model.depositValue, htmlAttributes: new { @class = "col-md-2" })
+        </div>
+        <div class="col-md-2">
+            @Html.EditorFor(model => model.depositValue, new { htmlAttributes = new { @class = "form-group" } })
+            @Html.ValidationMessageFor(model => model.depositValue, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <br><br>
+
+
+    <div class="form-group">
+
+        <div class="col-md-0">
+            @Html.LabelFor(model => model.visaCard, htmlAttributes: new { @class = " col-md-2" })
+            <div class="col-md-2">
+
+                @Html.EditorFor(model => model.visaCard, new { htmlAttributes = new { @class = "form-group" } })
+                @Html.ValidationMessageFor(model => model.visaCard, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+
+
+    <div class="form-group">
+        <div class="col-md-5">
+            @Html.LabelFor(model => model.cCV, htmlAttributes: new { @class = "col-md-4" })
+            <div class="col-md-2">
+
+                @Html.EditorFor(model => model.cCV, new { htmlAttributes = new { @class = "form-group" } })
+                @Html.ValidationMessageFor(model => model.cCV, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+
+    <br><br>
+
+
+
+
+    <div class="form-group">
+        <div class="col-md-5">
+            @Html.LabelFor(model => model.cardExpirationDate, htmlAttributes: new { @class = "col-md-5" })
+            <div class="col-md-2">
+
+                @Html.EditorFor(model => model.cardExpirationDate, new { htmlAttributes = new { @class = "form-group" } })
+                @Html.ValidationMessageFor(model => model.cardExpirationDate, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <br><br>
+
+
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-0 col-md-5">
+
+
+            <input type="submit" name="sold" value="Complete Payment" class="btn btn-success" style="margin-bottom : 5px" id="submitButton" />
+        </div>
+    </div>
+
+
+</form>
+
+
+<div>
+    @Html.ActionLink(layout.backToList, "Index")
+</div>
+
